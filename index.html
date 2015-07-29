@@ -1,78 +1,77 @@
 <!DOCTYPE html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Beer-Q! The Beer Lover's Quiz</title>
-		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<script src="http://code.jquery.com/jquery.min.js"></script>
-		<script src="beer.js"></script>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Beer-Q! The Beer Lover's Quiz</title>
+	<link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="beer.js"></script>
+</head>
 
-	<body>
-	<div id="wrapper">
+<body>
+<div id="wrapper">
 			
-		<!-- Intro Screen -->
+<!-- Intro Screen -->
 
-		<div id="index">
-		  <div class="logo"><img src="images/logo.png" alt="Beer-Q The Beer IQ Quiz"></div>
-		  <h1>Test your knowledge on all things beer&hellip;</h1>
-		  <a id="enter" href=""></a>
-		</div>
-
-		<!-- Header Element -->
-
-		<div class="header group" style="display: none;">
-		  <div class="secondary-logo"><img src="images/logo.png" alt="Beer-Q The Beer IQ Quiz"></div>
-          <div class="tally">Question: <span class="current">1</span> of 5</div>
-          <div class="final-tally" style="display: none;">Quiz Complete!</div>
-        </div>
-		
-		<!-- Question Screen -->
-
-		<div id="quizQuestions" style="display: none;">
-          <div class="main">
-            <div id="questionImage"><img src="images/empty.png" id="charIcon"></div>
-			<div id="questionArea">
-              <div id="answerSelect"></div>
-			</div>
-
-            <a href="" id="submit" class="next group">Submit</a>
-            <div class="clear"></div>
-          </div>
-        </div>
-				
-
-		<!-- Answer Screen -->
-
-		<div id="answerDiv" style="display: none;">
-		  <div class="answer-main">
-		    <div class="resultCorrect" style="display: none;"><h2>Correct!</h2></div>
-		    <div class="resultIncorrect" style="display: none;"><h2>Incorrect!</h2></div>
-		    <!--<div id="questionImage"><img src="images/empty.png" id="charIcon"></div>-->
-		    <div id="explain"></div>
-
-		    <a href="" id="cont" class="next-question group">Continue</a>
-		  </div>
-		</div>
-
-		<!-- Results Screen -->
-
-		  <div id="finalDiv" style="display: none;">
-		    <div class="results-main">
-		      <h2>Final Score:</h2>
-		      <div id="coaster" class="group">
-		        <div class="final-score">
-		          <h3><span id="result">5</span>/5</h3>
-		          <h4><span class="scoreTitle"></span></h4>
-		        </div>
-		        <img src="images/coaster.png">
-		      </div>
-		      <a href="" id="retry" class="next-question group">Play Again?</a>
-		    </div>
-		  </div>
-		
+<div id="index">
+	<div class="logo">
+		<img src="images/logo.png" alt="Beer-Q The Beer IQ Quiz">
 	</div>
-	</body>
+	<h1>Test your knowledge on all things beer&hellip;</h1>
+	<a id="enter" href=""></a>
+</div>
+
+<!-- Header Element -->
+
+<div class="header group" style="display: none;">
+	<div class="secondary-logo"><img src="images/logo.png" alt="Beer-Q The Beer IQ Quiz"></div>
+	<div class="tally">Question: <span class="current">1</span> of 5</div>
+	<div class="final-tally" style="display: none;">Quiz Complete!</div>
+</div>
+		
+<!-- Question Screen -->
+
+<div id="quizQuestions" style="display: none;">
+	<div class="main">
+    	<div id="questionImage"><img src="images/empty.png" id="charIcon"></div>
+		<div id="questionArea">
+        	<div id="answerSelect"></div>
+		</div>
+        <a href="" id="submit" class="next group">Submit</a>
+        <div class="clear"></div>
+    </div>
+</div>
+				
+<!-- Answer Screen -->
+
+<div id="answerDiv" style="display: none;">
+	<div class="answer-main">
+		<div class="resultCorrect" style="display: none;"><h2>Correct!</h2></div>
+		<div class="resultIncorrect" style="display: none;"><h2>Incorrect!</h2></div>
+		<!--<div id="questionImage"><img src="images/empty.png" id="charIcon"></div>-->
+		<div id="explain"></div>
+		<a href="" id="cont" class="next-question group">Continue</a>
+	</div>
+</div>
+
+<!-- Results Screen -->
+
+<div id="finalDiv" style="display: none;">
+	<div class="results-main">
+		<h2>Final Score:</h2>
+		<div id="coaster" class="group">
+			<div class="final-score">
+				<h3><span id="result">5</span>/5</h3>
+				<h4><span class="scoreTitle">Brewmaster</span></h4>
+			</div>
+			<img src="images/coaster.png">
+		</div>
+		<a href="" id="retry" class="next-question group">Play Again?</a>
+	</div>
+</div>
+		
+</div>
+</body>
 
 </html>

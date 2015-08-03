@@ -5,6 +5,15 @@ $(document).ready(function() {
     var numberCorrect = 0;
     var currentQuestion = 0;
     var previousQuestion = currentQuestion - 1;
+    var counter;
+
+    // SET COUNTER AT 1;
+    var resetCounters = function() {
+        counter = 1;
+        $('.current').text(counter);
+    }
+
+    resetCounters();
     
     // Questions
 
@@ -67,6 +76,7 @@ $(document).ready(function() {
     $("#answerDiv").on("click", "#cont", function (event) {
         if (currentQuestion < 4) {
             currentQuestion++;
+            counterInc();
             loadQuestion();
             imgChange();
             $('#answerDiv').hide();
@@ -74,6 +84,7 @@ $(document).ready(function() {
             $('.resultCorrect').hide();
             $('#quizQuestions').show();
         }else{
+            finalRank();
             $('#quizQuestions').hide();
             $('#answerDiv').hide();
             $('.resultIncorrect').hide();
@@ -83,6 +94,13 @@ $(document).ready(function() {
         };
         event.preventDefault();
     });
+
+    // Move Counter Forward
+
+    var counterInc = function() {
+        counter += 1;
+        $('.current').text(counter);
+    }
 
     // Play Again Button
 
@@ -106,11 +124,13 @@ $(document).ready(function() {
                 alert('Please select an answer');
         }else if (answer == questions[currentQuestion].correct){
                 numberCorrect++;
+                ansChange();
                 $('#quizQuestions').hide();
                 $('#answerDiv').show();
                 $('.resultCorrect').show();
                 $("#explain").html("<p>"+questions[currentQuestion].fact+"</p>");
         }else{
+                ansChange();
                 $('#quizQuestions').hide();
                 $('#answerDiv').show();
                 $('.resultIncorrect').show();
@@ -138,15 +158,33 @@ $(document).ready(function() {
 
     function ansChange() {
         if (currentQuestion == 0) {
-            document.getElementById("charIcon").src = "images/answer1.jpg";
+            document.getElementById("ansIcon").src = "images/answer1.jpg";
         } else if (currentQuestion == 1){
-            document.getElementById("charIcon").src = "images/answer2.jpg";
+            document.getElementById("ansIcon").src = "images/answer2.jpg";
         } else if (currentQuestion == 2){
-            document.getElementById("charIcon").src = "images/answer3.jpg";
+            document.getElementById("ansIcon").src = "images/answer3.jpg";
         } else if (currentQuestion == 3){
-            document.getElementById("charIcon").src = "images/answer4.jpg";
+            document.getElementById("ansIcon").src = "images/answer4.jpg";
         } else if (currentQuestion == 4){
-            document.getElementById("charIcon").src = "images/answer5.jpg";
+            document.getElementById("ansIcon").src = "images/answer5.jpg";
+        };
+    }
+
+    // Player Rank and Title
+
+    var finalRank = function() {
+        if (numberCorrect == 0) {
+            $('.scoreTitle').text("Do you even drink beer?");
+        } else if (numberCorrect == 1) {
+            $('.scoreTitle').text("You should drink more beer!");
+        } else if (numberCorrect == 2) {
+            $('.scoreTitle').text("Occasional beer drinker");
+        } else if (numberCorrect == 3) {
+            $('.scoreTitle').text("Social beer drinker");
+        } else if (numberCorrect == 4) {
+            $('.scoreTitle').text("Beer Afficionado!");
+        } else if (numberCorrect == 5) {
+            $('.scoreTitle').text("Brewmaster!");
         };
     }
 
